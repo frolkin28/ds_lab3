@@ -20,9 +20,6 @@ services:
     build:
       context: ./user_service
       dockerfile: postgres.Dockerfile
-    expose:
-      - 5432
-    command: -p 5432
     networks:
       - taxiapp_network
     volumes:
@@ -49,9 +46,6 @@ services:
       dockerfile: postgres.Dockerfile
     networks:
       - taxiapp_network
-    expose:
-      - 5433
-    command: -p 5433
     volumes:
       - car-postgres-data:/var/lib/postgresql/data
 
@@ -74,9 +68,6 @@ services:
     build:
       context: ./location_service
       dockerfile: postgres.Dockerfile
-    expose:
-      - 5434
-    command: -p 5434
     networks:
       - taxiapp_network
     volumes:
@@ -101,9 +92,6 @@ services:
     build:
       context: ./order_service
       dockerfile: postgres.Dockerfile
-    expose:
-      - 5435
-    command: -p 5435
     networks:
       - taxiapp_network
     volumes:
