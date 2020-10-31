@@ -21,6 +21,16 @@ spec:
                   env:
                       - name: SERVER_PORT
                         value: "8081"
+                      - name: API_SECRET_KEY
+                        value: "my_secret_key"
+                      - name: USER_SERVICE_DOMAIN
+                        value: "user-service:8081"
+                      - name: CAR_SERVICE_DOMAIN
+                        value: "car-service:8082"
+                      - name: LOCATION_SERVICE_DOMAIN
+                        value: "location-service:8083"
+                      - name: ORDER_SERVICE_DOMAIN
+                        value: "order-service:8084"
 ---
 apiVersion: v1
 kind: Service

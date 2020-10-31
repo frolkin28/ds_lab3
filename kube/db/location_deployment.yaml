@@ -18,6 +18,13 @@ spec:
           ports:
             - containerPort: 5434
           imagePullPolicy: Never
+          env:
+            - name: POSTGRES_USER
+              value: postgres
+            - name: POSTGRES_PASSWORD
+              value: postgres
+            - name: POSTGRES_DB
+              value: postgres
 ---
 apiVersion: v1
 kind: Service
