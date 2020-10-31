@@ -18,6 +18,9 @@ spec:
                   ports:
                       - containerPort: 8081
                   imagePullPolicy: Never
+                  env:
+                      - name: SERVER_PORT
+                        value: "8081"
 ---
 apiVersion: v1
 kind: Service
