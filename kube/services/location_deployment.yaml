@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: location-service-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: location-service
+  template:
+    metadata:
+      labels:
+        app: location-service
+    spec:
+      containers:
+        - name: location-service
+          image: "ds_lab3_location-service:latest"
+          ports:
+            - containerPort: 8083
+          imagePullPolicy: Never
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: location-service
+spec:
+  selector:
+    app: location-service
+  ports:
+    - port: 8083
+      targetPort: 8083
+  type: ClusterIP

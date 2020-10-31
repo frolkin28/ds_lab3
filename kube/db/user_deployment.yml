@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: user-db-deployment
+spec:
+    replicas: 1
+    selector:
+        matchLabels:
+            app: user-db
+    template:
+        metadata:
+            labels:
+                app: user-db
+        spec:
+            containers:
+                - image: "ds_lab3_order-db:latest"
+                  name: user-db
+                  ports:
+                      - containerPort: 5432
+                  imagePullPolicy: Never
+---
+apiVersion: v1
+kind: Service
+metadata:
+    name: user-db
+spec:
+    selector:
+        app: user-db
+    ports:
+        - port: 5432
+          targetPort: 5432
