@@ -13,7 +13,7 @@ spec:
                 app: user-db
         spec:
             containers:
-                - image: "ds_lab3_order-db:latest"
+                - image: "ds_lab3_user-db:latest"
                   name: user-db
                   ports:
                       - containerPort: 5432

@@ -13,7 +13,7 @@ import java.util.UUID;
 public class DriverTestService {
     private String token;
     private final RestTemplate restTemplate;
-    private final String url = "http://localhost:8090";
+    private final String url = "http://192.168.49.2:31329";
     private final ObjectMapper objectMapper;
     private final HttpHeaders headers;
 

@@ -13,7 +13,7 @@ spec:
                 app: user-service
         spec:
             containers:
-                - image: "ds_lab3_order-service:latest"
+                - image: "ds_lab3_user-service:latest"
                   name: user-service
                   ports:
                       - containerPort: 8081
